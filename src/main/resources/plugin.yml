@@ -1,0 +1,11 @@
+name: BoxGen
+version: '${project.version}'
+main: com.splerix.boxgen.BoxGen
+api-version: 1.19
+authors: [Splerix]
+description: A Box Gen plugin
+
+commands:
+  boxgen:
+    permission: boxgen.command
+    usage: /boxgen <command> [arguments]

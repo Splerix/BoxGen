@@ -1,0 +1,46 @@
+#If you want to reset the config delete it and restart the server
+#If there's any bugs try reloading or even restarting the config or downloading a newer version of the plugin
+
+#Commands
+#Command - Permission - Description
+#/boxgen reload - boxgen.reload - Reloads the Box Gen config
+#/box regen-all - boxgen.regen-all - Regenerates all Box Gen boxes
+#/box regen <box name> - boxgen.regen.<name of box here> - Regenerates a specific box
+
+boxes:
+  #If you want to add a box type the name of the box in box_name_list then below copy the format of the example
+  #Boxes cannot have the same name as other boxes and there CANNOT be any spaces
+  box_name_list:
+    - "example"
+  example:
+    #The name of the world
+    world: "world"
+    #For the Low Point make sure they are the lowest possible coordinate and for the high make sure it is the highest possible coordinate
+    low_point: "0,0,0"
+    high_point: "10,10,10"
+    #The safety teleport is where players will be teleported to if they are inside the box's area while it gets reset
+    #Decimals work here
+    safety_teleport: "15, 0, 5"
+    #For block types you type in all the blocks you want and the percentage you want them to take up
+    #For example the box below would generate 50% oak wood and 50% oak planks
+    #If one of the block types doesn't have a percentage or the total percentage doesn't equal 100% then it will evenly split up all blocks
+    #Make sure a % sign is in between the percent and the block
+    #Some blocks may crash the server or cause it to lag such as item frames, torches, etc
+    block_types: "50%OAK_WOOD 50%OAK_PLANKS"
+    #There are 2 different restart methods "timer" and "command"
+    #With timer it will regen the box automatically in that amount of minutes for the example below it will regen every 30 minutes
+    #If the timer amount is a decimal or a negative number it defaults to 30
+    #Command is manual; it will only regenerate when done through a command
+    regen_method: "timer 30"
+    #The regen message that gets sent to everyone when this box gets regenerated
+    #Delete the string if you don't want it to send a message
+    regen_message: "&7The example box has reset!"
+    #It will run through the commands in chronological after the box gets regenerated
+    #Leave empty if you don't want it to execute any commands after
+    #DO NOT ADD THE / IN FRONT OF THE COMMAND
+    regen_commands:
+      - "say test 1"
+      - "say test 2"
+    # If enabled is set to false the plugin will ignore this box
+    enabled: false
+
